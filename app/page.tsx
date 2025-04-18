@@ -1,4 +1,3 @@
-// src/app/page.tsx
 import { artworks } from '@/data/artworks'; // Import your data
 import ArtworkCarousel from '@/components/core/ArtworkCarousel';
 
