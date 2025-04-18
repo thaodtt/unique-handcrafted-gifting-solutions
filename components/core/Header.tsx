@@ -1,19 +1,17 @@
-// src/components/Header.tsx
-"use client"; // Needed for NavigationMenu interaction
+'use client';
 
-import * as React from "react";
-import Link from "next/link";
+import * as React from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle, // Style helper for links
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils"; // Utility for conditional classes
-import { ModeToggle } from "@/components/core/ModeToggle"; // Theme toggle component
-import { SearchBar } from "@/components/core/SearchBar";
+  navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu';
+import { ModeToggle } from '@/components/core/ModeToggle';
+import { SearchBar } from '@/components/core/SearchBar';
 
 export default function Header() {
   const router = useRouter();
@@ -23,58 +21,48 @@ export default function Header() {
   return (
     <header className="flex items-center justify-between p-4 border-b">
       {/* <div className="container flex h-14 items-center"> */}
-        <div className="ml-10 mr-10 flex items-center space-x-2 cursor-pointer" onClick={handleLogoClick}>
-          <span className="font-bold sm:inline-block">
-            <p>Unique Handcrafted</p>
-            <p>Gifting Solutions</p>
-          </span>
-          </div>
-          <div className="flex items-center">
-          <SearchBar placeholder="Look for an artwork here"/>
-          </div>
-          <div>         
+      <div className="ml-10 mr-10 flex items-center space-x-2 cursor-pointer" onClick={handleLogoClick}>
+        <span className="font-bold sm:inline-block">
+          <p>Unique Handcrafted</p>
+          <p>Gifting Solutions</p>
+        </span>
+      </div>
+      <div className="flex items-center">
+        <SearchBar placeholder="Look for an artwork here" />
+      </div>
+      <div>
         <NavigationMenu>
           <NavigationMenuList>
             {/* Artwork Link (Home) */}
             <NavigationMenuItem>
-               <Link href="/" passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                     Home
-                  </NavigationMenuLink>
-               </Link>
+              <Link href="/" asChild>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Home</NavigationMenuLink>
+              </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-               <Link href="/artwork" passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                     Artworks
-                  </NavigationMenuLink>
-               </Link>
-            </NavigationMenuItem>
-
-            {/* About Link */}
-            <NavigationMenuItem>
-              <Link href="/about" passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  About
-                </NavigationMenuLink>
+              <Link href="/artwork" asChild>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Artworks</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
 
-            {/* Contact Link */}
             <NavigationMenuItem>
-              <Link href="/contact" passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Contact
-                </NavigationMenuLink>
+              <Link href="/about" asChild>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>About</NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <Link href="/contact" asChild>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Contact</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        </div>
-        
-        <div className="flex items-center gap-3 mr-10">
-            <ModeToggle />
-        </div>
+      </div>
+
+      <div className="flex items-center gap-3 mr-10">
+        <ModeToggle />
+      </div>
       {/* </div> */}
     </header>
   );

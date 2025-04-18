@@ -1,6 +1,6 @@
 // src/types/artwork.ts
-export type ArtworkType = "painting" | "tray" | "coaster";
-export type ArtworkCategory = "New" | "Popular" | "Diwali" | string; // Allow other string categories
+export type ArtworkType = 'painting' | 'tray' | 'coaster';
+export type ArtworkCategory = 'New' | 'Popular' | 'Diwali' | string; // Allow other string categories
 
 export interface Artwork {
   id: string; // Unique identifier
