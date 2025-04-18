@@ -1,5 +1,5 @@
-import { Artwork } from "@/types/artwork";
-import {artworks} from "@/data/artworks";
+import { Artwork } from '@/types/artwork';
+import { artworks } from '@/data/artworks';
 
 export const getSearchEndpoint = (searchQuery: string) => `/search/${searchQuery}`;
 
