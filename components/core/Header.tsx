@@ -35,26 +35,34 @@ export default function Header() {
           <NavigationMenuList>
             {/* Artwork Link (Home) */}
             <NavigationMenuItem>
-              <Link href="/" asChild>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Home</NavigationMenuLink>
-              </Link>
+              <NavigationMenuLink asChild>
+                <Link href="/" className={navigationMenuTriggerStyle()}>
+                  Home
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/artwork" asChild>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Artworks</NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <Link href="/about" asChild>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>About</NavigationMenuLink>
-              </Link>
+              <NavigationMenuLink asChild>
+                <Link href="/artwork" className={navigationMenuTriggerStyle()}>
+                  Artworks
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/contact" asChild>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Contact</NavigationMenuLink>
-              </Link>
+              <NavigationMenuLink asChild>
+                <Link href="/about" className={navigationMenuTriggerStyle()}>
+                  About
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild>
+                <Link href="/contact" className={navigationMenuTriggerStyle()}>
+                  Contact
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
