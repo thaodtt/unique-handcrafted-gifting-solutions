@@ -15,6 +15,9 @@ export default function HomePage() {
     <div>
       <h1 className="text-3xl font-bold text-center my-4">Welcome to Our Art Gallery</h1>
       <p className="text-center mb-8">Explore our unique handcrafted gifting solutions.</p>
+      <ArtworkCarousel heading="Featured Artworks" artworks={artworks} />
+      <ArtworkCarousel heading="Most Popular" artworks={artworks} />
+      <ArtworkCarousel heading="New Arrivals" artworks={artworks.slice(artworks.length - 5)} />
       <div>
         {types.map((type, index) => (
           <ArtworkCarousel
