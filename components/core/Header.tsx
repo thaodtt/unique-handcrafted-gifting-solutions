@@ -28,58 +28,69 @@ export default function Header() {
     <header className="sticky top-0 bg-background z-50 w-full border-b">
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo */}
-        <div className="flex items-center space-x-2 cursor-pointer" onClick={handleLogoClick}>
+        <div
+          className="flex items-center space-x-2 cursor-pointer mb-2 md:mb-0" // Added mb-2 for mobile layout
+          onClick={handleLogoClick}
+        >
           <span className="font-bold text-sm sm:text-base">
             <p className="text-xs sm:text-sm">Unique Handcrafted</p>
             <p className="text-xs sm:text-sm">Gifting Solutions</p>
           </span>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-foreground hover:text-foreground/80 focus:outline-none focus:ring-2 focus:ring-ring focus-offset-1"
-          onClick={toggleMenu}
-          aria-label="Toggle navigation menu"
-        >
-          <Menu className="h-6 w-6" />
-        </button>
-
-        {/* Desktop Navigation and Search */}
-        <div className="hidden md:flex items-center space-x-4">
+        {/* Search Bar (Visible on Mobile) */}
+        <div className="w-full md:w-auto mb-3 md:mb-0">
+          {' '}
+          {/* Adjusted width for mobile */}
           <SearchBar placeholder="Look for an artwork here" />
-          <NavigationMenu>
-            <NavigationMenuList className="flex space-x-4">
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link href="/" className={navigationMenuTriggerStyle()}>
-                    Home
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link href="/artwork" className={navigationMenuTriggerStyle()}>
-                    Artworks
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link href="/about" className={navigationMenuTriggerStyle()}>
-                    About
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link href="/contact" className={navigationMenuTriggerStyle()}>
-                    Contact
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-          <ModeToggle />
+        </div>
+
+        <div className="flex items-center md:space-x-4">
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-foreground hover:text-foreground/80 focus:outline-none focus:ring-2 focus:ring-ring focus-offset-1"
+            onClick={toggleMenu}
+            aria-label="Toggle navigation menu"
+          >
+            <Menu className="h-6 w-6" />
+          </button>
+
+          {/* Desktop Navigation and Mode Toggle */}
+          <div className="hidden md:flex items-center space-x-4">
+            <NavigationMenu>
+              <NavigationMenuList className="flex space-x-4">
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link href="/" className={navigationMenuTriggerStyle()}>
+                      Home
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link href="/artwork" className={navigationMenuTriggerStyle()}>
+                      Artworks
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link href="/about" className={navigationMenuTriggerStyle()}>
+                      About
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link href="/contact" className={navigationMenuTriggerStyle()}>
+                      Contact
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+            <ModeToggle />
+          </div>
         </div>
 
         {/* Mobile Navigation (Conditional Rendering) */}
