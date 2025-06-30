@@ -7,12 +7,12 @@ export default function ContactPage() {
       <p className="mb-6">Interested in a piece? Have questions about a custom order? Get in touch!</p>
 
       <div className="space-y-4">
-        <div className="flex items-center space-x-3">
+        {/* <div className="flex items-center space-x-3">
           <Mail className="h-5 w-5 text-muted-foreground" />
           <a href="mailto:your.email@example.com" className="hover:underline">
             your.email@example.com
           </a>
-        </div>
+        </div> */}
         <div className="flex items-center space-x-3">
           <Phone className="h-5 w-5 text-muted-foreground" />
           <span>+91 9968623165</span>
